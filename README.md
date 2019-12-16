@@ -1,1 +1,1 @@
-# MySeleniumTasks
+# MySeleniumHoweworks
