@@ -3,24 +3,25 @@ package utilities;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class BrowserFactory {
-    public static WebDriver getDriver(String browser){
-        String OS = System.getProperty("os.name").toLowerCase();
-        if(OS.contains("win") && browser.equalsIgnoreCase("safari")){
-            return null;
-        }else if(browser.equalsIgnoreCase("chrome") && (OS.contains("win") || OS.contains("mac"))){
+
+    //we gonna create a method
+    //that will return a webdriver object
+    //this method will take one parameter - String browser
+    //based on the value of the browser parameter
+    //method will return corresponded webdriver object
+    // if browser = chrome, then return chromedriver object
+    public static WebDriver getDriver(String browser) {
+        if (browser.equalsIgnoreCase("chrome")) {
             WebDriverManager.chromedriver().setup();
             return new ChromeDriver();
-        }else if (browser.equalsIgnoreCase("firefox") && (OS.contains("win") || OS.contains("mac"))){
+        } else if (browser.equalsIgnoreCase("firefox")) {
             WebDriverManager.firefoxdriver().setup();
             return new FirefoxDriver();
-        }else if(browser.equalsIgnoreCase("edge") &&  OS.contains("win")) {
-            WebDriverManager.edgedriver().version("44.18362.387.0").setup();
-            return new EdgeDriver();
         }
-        return null;
+        WebDriverManager.chromedriver().setup();
+        return new ChromeDriver();
     }
 }

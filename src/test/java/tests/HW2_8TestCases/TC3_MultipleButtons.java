@@ -1,4 +1,4 @@
-package tests.HW2_TestCases;
+package tests.HW2_8TestCases;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -28,6 +28,6 @@ public class TC3_MultipleButtons {
 
         }
         BrowserUtils.wait(2);
-        driver.close();
+       // driver.close();
     }
 }

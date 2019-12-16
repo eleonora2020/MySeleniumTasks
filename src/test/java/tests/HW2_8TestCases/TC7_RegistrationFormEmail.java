@@ -1,4 +1,4 @@
-package tests.HW2_TestCases;
+package tests.HW2_8TestCases;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

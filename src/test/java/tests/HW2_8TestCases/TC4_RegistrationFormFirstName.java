@@ -1,4 +1,4 @@
-package tests.HW2_TestCases;
+package tests.HW2_8TestCases;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import utilities.BrowserFactory;
 import utilities.BrowserUtils;
 
-public class TC5_RegistrationFormLastName {
+public class TC4_RegistrationFormFirstName {
 
     public static void main(String[] args) {
 
@@ -15,16 +15,16 @@ public class TC5_RegistrationFormLastName {
         driver.get(" https://practice-cybertekschool.herokuapp.com");
         BrowserUtils.wait(2);
         WebElement RegForm = driver.findElement(By.linkText("Registration Form")); RegForm.click();
-        String ExpextedResult = "The last name can only consist of alphabetical letters and dash";
+        String ExpectedResult = "first name can only consist of alphabetical letters";
 
-        WebElement inputBox = driver.findElement(By.name("lastname"));
+        WebElement inputBox = driver.findElement(By.name("firstname"));
         inputBox.sendKeys("123");
-        WebElement nonValidName = driver.findElement(By.xpath("/html/body/div/div[2]//div[2]/div/small[3]"));
+        WebElement nonValidName = driver.findElement(By.xpath("/html/body/div/div[2]//div[1]/div/small[3]"));
         BrowserUtils.wait(2);
         String ActualResult = nonValidName.getText();
         System.out.println(ActualResult);
 
-        if(ExpextedResult.equals(ActualResult)){
+        if(ExpectedResult.equals(ActualResult)){
             System.out.println("Test Passed");
         }else{
             System.out.println("Test Failed");
